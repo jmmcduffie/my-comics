@@ -1,0 +1,22 @@
+{
+  "name": "my-comics",
+  "version": "0.1.0",
+  "authors": [
+    "Jeremy McDuffie"
+  ],
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "scut": "~0.10.4",
+    "normalize.css": "~3.0.1"
+  }
+}

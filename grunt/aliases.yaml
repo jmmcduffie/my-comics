@@ -1,0 +1,13 @@
+default:
+  - bower
+  - copy
+  - bowercopy
+  - sass
+  - autoprefixer
+
+tasks:
+  - availabletasks
+
+server:
+  - default
+  - connect
