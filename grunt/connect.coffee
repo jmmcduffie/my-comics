@@ -1,6 +1,9 @@
 module.exports =
   server:
     options:
-      port: 9001
-      livereload: true
-      keepalive: true
+      port: 9000
+      hostname: "localhost"
+      base: "."
+      open: true
+      keepalive: false
+      livereload: 9001
