@@ -6,7 +6,8 @@
 @import "typography";
 @import "layout";
 
-#favorites {
+#favorites,
+#recent {
   margin: 1em 0 2em;
 
   h2 {
@@ -44,25 +45,17 @@
 
   li {
     padding: 0 0.5em 1em;
-
-    @include comics-minwidth(600px) {
-      float: left;
-      width: 50%;
-      padding: 0.5em;
-    }
-
-    @include comics-minwidth(900px) {
-      width: 25%;
-    }
   }
 
   h3 {
+    overflow: auto;
     margin: 0;
     padding: 0.5em 1em;
     background: $theme-color--darkBlue;
     background: linear-gradient(to right, $theme-color--darkBlue 20%, darken($theme-color--darkBlue, 10%));
     color: white;
     text-align: center;
+    white-space: nowrap;
   }
 
   footer {
@@ -95,6 +88,36 @@
         font-size: scut-rem(14);
         @include scut-padding(1em n n 2em);
       }
+    }
+  }
+}
+
+#favorites {
+  li {
+    @include comics-minwidth(600px) {
+      float: left;
+      width: 50%;
+      padding: 0.5em;
+    }
+
+    @include comics-minwidth(900px) {
+      width: 25%;
+    }
+  }
+}
+
+#recent {
+  li {
+    float: left;
+    width: 50%;
+    padding: 0.5em;
+
+    @include comics-minwidth(600px) {
+      width: 33.333333%;
+    }
+
+    @include comics-minwidth(900px) {
+      width: 16.666666%;
     }
   }
 }

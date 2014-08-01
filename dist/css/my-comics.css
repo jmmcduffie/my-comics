@@ -4,12 +4,14 @@
 * v0.10.4
 * Docs at http://davidtheclark.github.io/scut
 */
-#favorites ol:after {
+#favorites ol:after,
+#recent ol:after {
   content: "";
   display: table;
   clear: both; }
 
-#favorites ol {
+#favorites ol,
+#recent ol {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
@@ -473,9 +475,11 @@ body {
   margin: 0 auto;
   max-width: 75em; }
 
-#favorites {
+#favorites,
+#recent {
   margin: 1em 0 2em; }
-  #favorites h2 {
+  #favorites h2,
+  #recent h2 {
     margin-bottom: 0.5em;
     padding-left: 0.5em;
     font-weight: 600;
@@ -484,16 +488,19 @@ body {
     font-size: 32px;
     font-size: 3.2rem; }
     @media screen and (min-width: 75em) {
-      #favorites h2 {
+      #favorites h2,
+      #recent h2 {
         position: relative; }
-        #favorites h2::before {
+        #favorites h2::before,
+        #recent h2::before {
           content: "\00A0";
           display: block;
           background-color: #00749e;
           position: absolute;
           right: 100%;
           left: -999em; }
-        #favorites h2::after {
+        #favorites h2::after,
+        #recent h2::after {
           content: "";
           display: inline-block;
           height: 0;
@@ -508,19 +515,15 @@ body {
           position: absolute;
           top: 0;
           left: -0.5em; } }
-  #favorites ol {
+  #favorites ol,
+  #recent ol {
     padding: 0.5em; }
-  #favorites li {
+  #favorites li,
+  #recent li {
     padding: 0 0.5em 1em; }
-    @media screen and (min-width: 37.5em) {
-      #favorites li {
-        float: left;
-        width: 50%;
-        padding: 0.5em; } }
-    @media screen and (min-width: 56.25em) {
-      #favorites li {
-        width: 25%; } }
-  #favorites h3 {
+  #favorites h3,
+  #recent h3 {
+    overflow: auto;
     margin: 0;
     padding: 0.5em 1em;
     background: #00749e;
@@ -528,21 +531,27 @@ body {
     background: -webkit-linear-gradient(left, #00749e 20%, #004f6b);
     background: linear-gradient(to right, #00749e 20%, #004f6b);
     color: white;
-    text-align: center; }
-  #favorites footer {
+    text-align: center;
+    white-space: nowrap; }
+  #favorites footer,
+  #recent footer {
     text-align: center; }
     @media screen and (min-width: 37.5em) {
-      #favorites footer {
+      #favorites footer,
+      #recent footer {
         margin-right: 1em;
         text-align: right; } }
-    #favorites footer a {
+    #favorites footer a,
+    #recent footer a {
       display: block;
       color: #1bb3e0; }
-      #favorites footer a::after {
+      #favorites footer a::after,
+      #recent footer a::after {
         content: "\00A0\27a4";
         text-decoration: none; }
       @media screen and (max-width: 37.4375em) {
-        #favorites footer a {
+        #favorites footer a,
+        #recent footer a {
           margin: 0 1em;
           background-color: #1bb3e0;
           color: white;
@@ -550,8 +559,29 @@ body {
           padding-top: 1em;
           padding-bottom: 1em; } }
       @media screen and (min-width: 37.5em) {
-        #favorites footer a {
+        #favorites footer a,
+        #recent footer a {
           display: inline-block;
           font-size: 1.4rem;
           padding-top: 1em;
           padding-left: 2em; } }
+
+@media screen and (min-width: 37.5em) {
+  #favorites li {
+    float: left;
+    width: 50%;
+    padding: 0.5em; } }
+@media screen and (min-width: 56.25em) {
+  #favorites li {
+    width: 25%; } }
+
+#recent li {
+  float: left;
+  width: 50%;
+  padding: 0.5em; }
+  @media screen and (min-width: 37.5em) {
+    #recent li {
+      width: 33.333333%; } }
+  @media screen and (min-width: 56.25em) {
+    #recent li {
+      width: 16.666666%; } }
