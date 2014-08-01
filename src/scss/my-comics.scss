@@ -1,3 +1,100 @@
 @import "scut/scut";
 
+@import "variables";
+@import "utilities";
 @import "reset";
+@import "typography";
+@import "layout";
+
+#favorites {
+  margin: 1em 0 2em;
+
+  h2 {
+    margin-bottom: scut-em(16, 32);
+    padding-left: scut-em(16, 32);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $theme-color--darkBlue;
+
+    @include scut-rem-fallback(32px);
+
+    @include comics-minwidth(1200px) {
+      position: relative;
+
+      &::before {
+        content: "\00A0";
+        display: block;
+        background-color: $theme-color--darkBlue;
+        @include scut-absolute(n 100% n -999em);
+      }
+
+      &::after {
+        content: "";
+        @include scut-triangle(bottom-right, 0.5em 1.2em, white);
+        @include scut-absolute(0 n n -0.5em);
+      }
+    }
+  }
+
+  ol {
+    @extend %scut-list-unstyled;
+    @extend %scut-clearfix;
+    padding: 0.5em;
+  }
+
+  li {
+    padding: 0 0.5em 1em;
+
+    @include comics-minwidth(600px) {
+      float: left;
+      width: 50%;
+      padding: 0.5em;
+    }
+
+    @include comics-minwidth(900px) {
+      width: 25%;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0.5em 1em;
+    background: $theme-color--darkBlue;
+    background: linear-gradient(to right, $theme-color--darkBlue 20%, darken($theme-color--darkBlue, 10%));
+    color: white;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+
+    @include comics-minwidth(600px) {
+      margin-right: 1em;
+      text-align: right;
+    }
+
+    a {
+      display: block;
+      color: $theme-color--blue;
+
+      &::after {
+        content: "\00A0\27a4";
+        text-decoration: none;
+      }
+
+      @include comics-maxwidth(599px) {
+        margin: 0 1em;
+        background-color: $theme-color--blue;
+        color: white;
+        text-decoration: none;
+        @include scut-padding(1em n);
+      }
+
+      @include comics-minwidth(600px) {
+        display: inline-block;
+        font-size: scut-rem(14);
+        @include scut-padding(1em n n 2em);
+      }
+    }
+  }
+}

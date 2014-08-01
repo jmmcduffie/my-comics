@@ -1,0 +1,25 @@
+@mixin comics-minwidth($threshold) {
+  @media screen and (min-width: scut-em($threshold)) {
+    @content;
+  }
+}
+
+@mixin comics-maxwidth($threshold) {
+  @media screen and (max-width: scut-em($threshold)) {
+    @content;
+  }
+}
+
+%comics-grid-row {
+  @extend %scut-clearfix;
+}
+
+@mixin comics-grid-col($cols: 1, $total: 12) {
+  float: left;
+  padding-left: 20px;
+  width: $cols / $total * 100%;
+
+  &:first-child {
+    padding-left: 0;
+  }
+}

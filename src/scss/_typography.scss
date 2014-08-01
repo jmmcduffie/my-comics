@@ -1,0 +1,28 @@
+$scut-rem-base: 10;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $type-fontFamily;
+  font-size: 1.6em;
+  line-height: $type-lineHeight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $type-lineHeight--headings;
+}
+
+a {
+  color: inherit;
+
+  &:hover, &:active {
+    text-decoration: none;
+  }
+}
