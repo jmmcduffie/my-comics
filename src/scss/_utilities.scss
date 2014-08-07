@@ -10,6 +10,10 @@
   }
 }
 
+@mixin comics-grid-row {
+  @include scut-clearfix;
+}
+
 %comics-grid-row {
   @extend %scut-clearfix;
 }

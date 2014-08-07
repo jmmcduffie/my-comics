@@ -4,20 +4,114 @@
 @import "utilities";
 @import "reset";
 @import "typography";
-@import "layout";
+
+header[role="banner"] {
+  padding: 1em;
+  background: $theme-color--gray;
+
+  nav {
+    @extend %scut-clearfix;
+
+    ol {
+      text-align: center;
+      @include scut-list-inline(1em);
+    }
+
+    a {
+      color: $theme-color--darkBlue;
+    }
+  }
+
+  @include comics-minwidth(600px) {
+    margin: 0 0 2em;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.25);
+
+    @include comics-grid-row;
+
+    #logo {
+      @include comics-grid-col(4);
+    }
+
+    nav {
+      margin-top: scut-em(20);
+      @include comics-grid-col(8);
+
+      ol {
+        text-align: right;
+      }
+    }
+  }
+}
+
+#logo {
+  display: block;
+  font-family: $type-fontFamily--headings;
+  text-decoration: none;
+
+  @include scut-rem-fallback(36px);
+  @include comics-maxwidth(599px) {
+    text-align: center;
+  }
+}
+
+#main {
+  overflow-x: hidden;
+}
+
+#pageHeader h1 {
+  padding: scut-em(15, 36) scut-em(16, 36);
+  color: $theme-color--darkGray;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include scut-rem-fallback(36px);
+  @include scut-border(1px solid $theme-color--darkGray, y n);
+
+  @include comics-minwidth(600px) {
+    border: 0 none;
+    text-align: right;
+
+    @include scut-padding(0 n);
+  }
+
+  @include comics-minwidth(1200px) {
+    position: relative;
+
+    &::before {
+      content: "\00A0";
+      display: block;
+      background-color: $theme-color--darkGray;
+      @include scut-absolute(n -9999em n 100%);
+    }
+
+    &::after {
+      content: "";
+      @include scut-triangle(bottom-left, 0.5em 1.2em, white);
+      @include scut-absolute(0 -0.5em n n);
+    }
+  }
+}
+
+#pageHeader,
+#favorites,
+#recent {
+  margin: 0 auto 2em;
+  max-width: scut-em(1200);
+}
 
 #favorites,
 #recent {
-  margin: 1em 0 2em;
-
   h2 {
     margin-bottom: scut-em(16, 32);
-    padding-left: scut-em(16, 32);
-    font-weight: 600;
-    text-transform: uppercase;
+    padding: 0 scut-em(16, 32);
     color: $theme-color--darkBlue;
+    text-transform: uppercase;
 
     @include scut-rem-fallback(32px);
+
+    @include comics-maxwidth(599px) {
+      text-align: center;
+    }
 
     @include comics-minwidth(1200px) {
       position: relative;
@@ -54,6 +148,8 @@
     background: $theme-color--darkBlue;
     background: linear-gradient(to right, $theme-color--darkBlue 20%, darken($theme-color--darkBlue, 10%));
     color: white;
+    font-family: $type-fontFamily;
+    font-style: italic;
     text-align: center;
     white-space: nowrap;
   }
@@ -120,4 +216,10 @@
       width: 16.666666%;
     }
   }
+}
+
+footer[role="contentinfo"] {
+  margin: 2em 0 0;
+  padding: 1em;
+  text-align: center;
 }
