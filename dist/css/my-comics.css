@@ -643,7 +643,7 @@ header[role="banner"] {
   #favorites footer a,
   #recent footer a {
     display: block;
-    color: #1bb3e0; }
+    color: #00749e; }
     #favorites footer a::after,
     #recent footer a::after {
       content: "\00A0\27a4";
@@ -652,7 +652,7 @@ header[role="banner"] {
       #favorites footer a,
       #recent footer a {
         margin: 0 1em;
-        background-color: #1bb3e0;
+        background-color: #00749e;
         color: white;
         text-decoration: none;
         padding-top: 1em;

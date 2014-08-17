@@ -18,7 +18,7 @@ header[role="banner"] {
     }
 
     a {
-      color: $theme-color--darkBlue;
+      color: $theme-color--blue;
     }
   }
 
@@ -104,7 +104,7 @@ header[role="banner"] {
   h2 {
     margin-bottom: scut-em(16, 32);
     padding: 0 scut-em(16, 32);
-    color: $theme-color--darkBlue;
+    color: $theme-color--blue;
     text-transform: uppercase;
 
     @include scut-rem-fallback(32px);
@@ -119,7 +119,7 @@ header[role="banner"] {
       &::before {
         content: "\00A0";
         display: block;
-        background-color: $theme-color--darkBlue;
+        background-color: $theme-color--blue;
         @include scut-absolute(n 100% n -999em);
       }
 
@@ -145,8 +145,8 @@ header[role="banner"] {
     overflow: auto;
     margin: 0;
     padding: 0.5em 1em;
-    background: $theme-color--darkBlue;
-    background: linear-gradient(to right, $theme-color--darkBlue 20%, darken($theme-color--darkBlue, 10%));
+    background: $theme-color--blue;
+    background: linear-gradient(to right, $theme-color--blue 20%, darken($theme-color--blue, 10%));
     color: white;
     font-family: $type-fontFamily;
     font-style: italic;
